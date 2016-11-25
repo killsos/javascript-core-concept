@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var str = 1;
+      var obj = {
+        "str":2,
+        fn:function(){
+          var str = 3;
+          console.log(this.str);
+          function log(){
+            console.log(str);
+            console.log(this);
+          }
+          log();
+        }
+      }
+
+      obj.fn();
+
+      var test = obj.fn;
+      test();
+
+      console.log(obj.fn === test);
+    </script>
+  </body>
+</html>
